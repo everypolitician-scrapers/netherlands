@@ -83,14 +83,13 @@ def scrape_list(url, base_url)
       email: extra_data[:email],
       source: extra_url.to_s
     }
-    puts data
     ScraperWiki.save_sqlite([:id], data)
   end
 end
 
 def get_extra_data(url)
   noko = noko_for(url)
-  email = noko.css('div.box-contact a').text
+  email = noko.css('div.box-contact a').first.text
   details = noko.css('#passport dl')
   dob = details.xpath('//dl/dt[contains(.,"Date of birth")]/following-sibling::dd[not(position() > 1)]/text()')
 
