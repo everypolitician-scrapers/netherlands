@@ -71,25 +71,25 @@ def scrape_list(url, base_url)
 
     data = {
       id: extra_url.to_s.split('/').last,
-      name: name_parts[:name],
-      family_name: name_parts[:family_name],
-      given_name: name_parts[:given_name],
-      sort_name: name_parts[:sort_name],
       faction_id: faction_id,
       faction: faction,
       gender: tds[5].css('span').text.downcase,
       img: URI.join(base_url, img.to_s).to_s,
-      dob: extra_data[:dob],
-      email: extra_data[:email],
       source: extra_url.to_s
     }
+
+    data = data.merge(name_parts)
+    data = data.merge(extra_data)
+    puts data
     ScraperWiki.save_sqlite([:id], data)
   end
 end
 
 def get_extra_data(url)
   noko = noko_for(url)
-  email = noko.css('div.box-contact a').first.text
+  contacts = noko.css('div.box-contact a')
+  email = contacts.first.text
+  website = contacts[1].css('@href').to_s if contacts[1]
   details = noko.css('#passport dl')
   dob = details.xpath('//dl/dt[contains(.,"Date of birth")]/following-sibling::dd[not(position() > 1)]/text()')
 
@@ -99,6 +99,8 @@ def get_extra_data(url)
     email: email,
     dob: dob.to_s
   }
+
+  details[:website] = website if website
 
   return details
 end
