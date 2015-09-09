@@ -1,25 +1,61 @@
-# This is a template for a Ruby scraper on morph.io (https://morph.io)
-# including some code snippets below that you should find helpful
+# #!/bin/env ruby
+# encoding: utf-8
 
-# require 'scraperwiki'
-# require 'mechanize'
-#
-# agent = Mechanize.new
-#
-# # Read in a page
-# page = agent.get("http://foo.com")
-#
-# # Find somehing on the page using css selectors
-# p page.at('div.content')
-#
-# # Write out to the sqlite database using scraperwiki library
-# ScraperWiki.save_sqlite(["name"], {"name" => "susan", "occupation" => "software developer"})
-#
-# # An arbitrary query against the database
-# ScraperWiki.select("* from data where 'name'='peter'")
+require 'scraperwiki'
+require 'nokogiri'
+require 'open-uri/cached'
 
-# You don't have to do things with the Mechanize or ScraperWiki libraries.
-# You can use whatever gems you want: https://morph.io/documentation/ruby
-# All that matters is that your final data is written to an SQLite database
-# called "data.sqlite" in the current working directory which has at least a table
-# called "data".
+OpenURI::Cache.cache_path = '.cache'
+
+def noko_for(url)
+  Nokogiri::HTML(open(url).read)
+end
+
+def expand_party(party)
+  parties = {
+    'PVV' => 'Party for Freedom',
+    'VVD' => "People's Party for Freedom and Democracy",
+    'PvdA' => 'Labour Party',
+    'SP' => 'Socialist Party',
+    'D66' => 'Democrats 66',
+    'CU' => 'Christian Union',
+    'GL' => 'Green Left',
+    'SGP' => 'Reformed Political Party',
+    'PvdD' => 'Party for the Animals',
+    'GrKÖ' => 'Group Kuzu/Öztürk',
+    'GrBvK' => 'Bontes/Van Klaveren',
+  }
+
+  party = parties[party] if parties[party]
+
+  return party
+end
+
+def scrape_list(url)
+  noko = noko_for(url)
+  noko.css('table.member-list tbody tr').each do |tr|
+    tds = tr.css('td')
+    next if tds.size == 1
+    name_parts = tds[0].css('a').text.split(',')
+    first_name = tds[1].css('span').text
+    last_name = name_parts.first
+    middle_names = name_parts.last.split('.').drop(1)
+    middle_name = middle_names.join(' ')
+    name = [first_name, middle_name, last_name].join(' ')
+    name = name.strip.gsub(/\s+/, " ")
+    faction = expand_party( tds[2].css('span').text )
+    data_rel = tds[0].css('a/@data-rel').text
+    img = noko.css('div.' + data_rel + ' img/@src').text
+    data = {
+      name: name,
+      faction: faction,
+      area: tds[3].css('span').text,
+      gender: tds[5].css('span').text.downcase,
+      img: 'http://www.houseofrepresentatives.nl' + img,
+      source: url
+    }
+    ScraperWiki.save_sqlite([:name, :faction, :area], data)
+  end
+end
+
+scrape_list('http://www.houseofrepresentatives.nl/members_of_parliament/members_of_parliament')
