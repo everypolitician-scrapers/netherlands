@@ -80,7 +80,6 @@ def scrape_list(url, base_url)
 
     data = data.merge(name_parts)
     data = data.merge(extra_data)
-    puts data
     ScraperWiki.save_sqlite([:id], data)
   end
 end
