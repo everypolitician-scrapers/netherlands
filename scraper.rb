@@ -49,12 +49,11 @@ def scrape_list(url)
     data = {
       name: name,
       faction: faction,
-      area: tds[3].css('span').text,
       gender: tds[5].css('span').text.downcase,
       img: 'http://www.houseofrepresentatives.nl' + img,
       source: url
     }
-    ScraperWiki.save_sqlite([:name, :faction, :area], data)
+    ScraperWiki.save_sqlite([:name, :faction], data)
   end
 end
 
