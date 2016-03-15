@@ -104,4 +104,4 @@ def get_extra_data(url)
   return details
 end
 
-scrape_list('http://www.houseofrepresentatives.nl/members_of_parliament/members_of_parliament', 'http://www.houseofrepresentatives.nl')
+scrape_list('https://www.houseofrepresentatives.nl/members_of_parliament/members_of_parliament', 'https://www.houseofrepresentatives.nl')
