@@ -18,7 +18,7 @@ response:
     message: OK
   headers:
     Date:
-    - Tue, 02 Aug 2016 16:12:47 GMT
+    - Thu, 04 Aug 2016 09:44:51 GMT
     Server:
     - Apache
     X-Content-Type-Options:
@@ -37,11 +37,11 @@ response:
       rel="canonical",<https://www.houseofrepresentatives.nl/node/978>; rel="shortlink"
     Strict-Transport-Security:
     - max-age=31536000
-    Transfer-Encoding:
-    - chunked
     Content-Type:
     - text/html; charset=utf-8
+    Content-Length:
+    - '21723'
   body:
     encoding: UTF-8
   http_version: 
-recorded_at: Tue, 02 Aug 2016 16:12:48 GMT
+recorded_at: Thu, 04 Aug 2016 09:44:52 GMT
