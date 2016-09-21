@@ -18,7 +18,7 @@ response:
     message: OK
   headers:
     Date:
-    - Wed, 21 Sep 2016 11:16:08 GMT
+    - Wed, 21 Sep 2016 13:52:01 GMT
     Server:
     - Apache
     X-Content-Type-Options:
@@ -38,11 +38,11 @@ response:
       rel="shortlink"
     Strict-Transport-Security:
     - max-age=31536000
+    Transfer-Encoding:
+    - chunked
     Content-Type:
     - text/html; charset=utf-8
-    Content-Length:
-    - '162476'
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Wed, 21 Sep 2016 11:16:11 GMT
+recorded_at: Wed, 21 Sep 2016 13:52:04 GMT
