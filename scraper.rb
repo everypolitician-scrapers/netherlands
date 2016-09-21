@@ -85,7 +85,7 @@ end
 def get_extra_data(url)
   noko = noko_for(url)
   contacts = noko.css('div.box-contact a')
-  email = contacts.first.text
+  email = contacts.first.text rescue nil
   website = contacts[1].css('@href').to_s if contacts[1]
   details = noko.css('#passport dl')
   dob = details.xpath('//dl/dt[contains(.,"Date of birth")]/following-sibling::dd[not(position() > 1)]/text()')
