@@ -18,7 +18,7 @@ response:
     message: OK
   headers:
     Date:
-    - Sun, 30 Oct 2016 00:16:36 GMT
+    - Mon, 31 Oct 2016 21:00:06 GMT
     Server:
     - Apache
     X-Content-Type-Options:
@@ -44,4 +44,4 @@ response:
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Sun, 30 Oct 2016 00:16:37 GMT
+recorded_at: Mon, 31 Oct 2016 21:00:07 GMT
