@@ -18,7 +18,7 @@ response:
     message: OK
   headers:
     Date:
-    - Tue, 06 Dec 2016 08:05:42 GMT
+    - Wed, 07 Dec 2016 11:12:54 GMT
     Server:
     - Apache
     X-Content-Type-Options:
@@ -27,9 +27,11 @@ response:
     Expires:
     - Sun, 19 Nov 1978 05:00:00 GMT
     Cache-Control:
-    - no-cache, must-revalidate, post-check=0, pre-check=0
+    - no-cache, must-revalidate
     Content-Language:
     - en
+    X-Frame-Options:
+    - SAMEORIGIN
     X-Generator:
     - Drupal 7 (http://drupal.org)
     Link:
@@ -40,8 +42,8 @@ response:
     Content-Type:
     - text/html; charset=utf-8
     Content-Length:
-    - '21742'
+    - '21765'
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Tue, 06 Dec 2016 08:05:42 GMT
+recorded_at: Wed, 07 Dec 2016 11:12:54 GMT
