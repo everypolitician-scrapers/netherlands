@@ -1,0 +1,49 @@
+---
+request:
+  method: get
+  uri: https://www.houseofrepresentatives.nl/members_of_parliament/members_of_parliament/%C3%BCnver-e-pvda
+  body:
+    encoding: US-ASCII
+    string: ''
+  headers:
+    Accept-Encoding:
+    - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+    Accept:
+    - '*/*'
+    User-Agent:
+    - Ruby
+response:
+  status:
+    code: 200
+    message: OK
+  headers:
+    Date:
+    - Sun, 18 Dec 2016 16:34:15 GMT
+    Server:
+    - Apache
+    X-Content-Type-Options:
+    - nosniff
+    - nosniff
+    Expires:
+    - Sun, 19 Nov 1978 05:00:00 GMT
+    Cache-Control:
+    - no-cache, must-revalidate
+    Content-Language:
+    - en
+    X-Frame-Options:
+    - SAMEORIGIN
+    X-Generator:
+    - Drupal 7 (http://drupal.org)
+    Link:
+    - <https://www.houseofrepresentatives.nl/members_of_parliament/members_of_parliament/%C3%BCnver-e-pvda>;
+      rel="canonical",<https://www.houseofrepresentatives.nl/node/1208>; rel="shortlink"
+    Strict-Transport-Security:
+    - max-age=31536000
+    Content-Type:
+    - text/html; charset=utf-8
+    Content-Length:
+    - '19609'
+  body:
+    encoding: ASCII-8BIT
+  http_version: 
+recorded_at: Sun, 18 Dec 2016 16:34:16 GMT
