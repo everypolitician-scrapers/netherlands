@@ -18,7 +18,7 @@ response:
     message: OK
   headers:
     Date:
-    - Fri, 24 Feb 2017 01:56:31 GMT
+    - Sat, 25 Feb 2017 02:35:51 GMT
     Server:
     - Apache
     X-Content-Type-Options:
@@ -42,8 +42,8 @@ response:
     Content-Type:
     - text/html; charset=utf-8
     Content-Length:
-    - '20747'
+    - '19764'
   body:
     encoding: UTF-8
   http_version: 
-recorded_at: Fri, 24 Feb 2017 01:56:32 GMT
+recorded_at: Sat, 25 Feb 2017 02:35:51 GMT
