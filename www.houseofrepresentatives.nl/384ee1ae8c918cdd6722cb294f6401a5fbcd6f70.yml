@@ -18,7 +18,7 @@ response:
     message: OK
   headers:
     Date:
-    - Mon, 17 Oct 2016 09:57:25 GMT
+    - Thu, 23 Mar 2017 23:56:08 GMT
     Server:
     - Apache
     X-Content-Type-Options:
@@ -27,9 +27,11 @@ response:
     Expires:
     - Sun, 19 Nov 1978 05:00:00 GMT
     Cache-Control:
-    - no-cache, must-revalidate, post-check=0, pre-check=0
+    - no-cache, must-revalidate
     Content-Language:
     - en
+    X-Frame-Options:
+    - SAMEORIGIN
     X-Generator:
     - Drupal 7 (http://drupal.org)
     Link:
@@ -37,11 +39,11 @@ response:
       rel="canonical",<https://www.houseofrepresentatives.nl/node/1133>; rel="shortlink"
     Strict-Transport-Security:
     - max-age=31536000
+    Transfer-Encoding:
+    - chunked
     Content-Type:
     - text/html; charset=utf-8
-    Content-Length:
-    - '21338'
   body:
     encoding: UTF-8
   http_version: 
-recorded_at: Mon, 17 Oct 2016 09:57:29 GMT
+recorded_at: Thu, 23 Mar 2017 23:56:09 GMT
