@@ -18,7 +18,7 @@ response:
     message: OK
   headers:
     Date:
-    - Wed, 07 Jun 2017 09:29:49 GMT
+    - Thu, 08 Jun 2017 09:43:17 GMT
     Server:
     - Apache
     X-Content-Type-Options:
@@ -46,4 +46,4 @@ response:
   body:
     encoding: UTF-8
   http_version: 
-recorded_at: Wed, 07 Jun 2017 09:29:49 GMT
+recorded_at: Thu, 08 Jun 2017 09:43:17 GMT
