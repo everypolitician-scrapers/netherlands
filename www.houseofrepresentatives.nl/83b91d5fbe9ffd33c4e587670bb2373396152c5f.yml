@@ -20,19 +20,19 @@ response:
     Server:
     - nginx/1.10.2
     Date:
-    - Sun, 25 Jun 2017 11:34:36 GMT
+    - Mon, 26 Jun 2017 19:06:50 GMT
     Content-Type:
     - text/html; charset=utf-8
     Transfer-Encoding:
     - chunked
     Connection:
     - keep-alive
-    Expires:
-    - Sun, 19 Nov 1978 05:00:00 GMT
-    Cache-Control:
-    - no-cache, must-revalidate
+    X-Drupal-Cache:
+    - MISS
     X-Content-Type-Options:
     - nosniff
+    Etag:
+    - '"1498504010-1"'
     Content-Language:
     - en
     X-Frame-Options:
@@ -42,7 +42,16 @@ response:
     Link:
     - <https://www.houseofrepresentatives.nl/members_of_parliament/members_of_parliament/baudet-thp-fvd>;
       rel="canonical",<https://www.houseofrepresentatives.nl/node/1243>; rel="shortlink"
+    Cache-Control:
+    - public, max-age=3600
+    Last-Modified:
+    - Mon, 26 Jun 2017 19:06:50 GMT
+    Expires:
+    - Sun, 19 Nov 1978 05:00:00 GMT
+    Vary:
+    - Accept-Encoding
+    - Cookie
   body:
     encoding: UTF-8
   http_version: 
-recorded_at: Sun, 25 Jun 2017 11:34:36 GMT
+recorded_at: Mon, 26 Jun 2017 19:06:50 GMT
