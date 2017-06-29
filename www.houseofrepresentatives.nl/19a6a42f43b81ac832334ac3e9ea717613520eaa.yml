@@ -20,7 +20,7 @@ response:
     Server:
     - nginx/1.10.2
     Date:
-    - Wed, 28 Jun 2017 09:07:36 GMT
+    - Thu, 29 Jun 2017 07:32:05 GMT
     Content-Type:
     - text/html; charset=utf-8
     Transfer-Encoding:
@@ -28,11 +28,9 @@ response:
     Connection:
     - keep-alive
     X-Drupal-Cache:
-    - MISS
-    X-Content-Type-Options:
-    - nosniff
+    - HIT
     Etag:
-    - '"1498640856-1"'
+    - '"1498721498-1"'
     Content-Language:
     - en
     X-Frame-Options:
@@ -45,7 +43,7 @@ response:
     Cache-Control:
     - public, max-age=3600
     Last-Modified:
-    - Wed, 28 Jun 2017 09:07:36 GMT
+    - Thu, 29 Jun 2017 07:31:38 GMT
     Expires:
     - Sun, 19 Nov 1978 05:00:00 GMT
     Vary:
@@ -54,4 +52,4 @@ response:
   body:
     encoding: UTF-8
   http_version: 
-recorded_at: Wed, 28 Jun 2017 09:07:36 GMT
+recorded_at: Thu, 29 Jun 2017 07:32:06 GMT
