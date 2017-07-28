@@ -20,7 +20,7 @@ response:
     Server:
     - nginx/1.10.2
     Date:
-    - Thu, 27 Jul 2017 09:43:13 GMT
+    - Fri, 28 Jul 2017 11:47:46 GMT
     Content-Type:
     - text/html; charset=utf-8
     Transfer-Encoding:
@@ -32,7 +32,7 @@ response:
     X-Content-Type-Options:
     - nosniff
     Etag:
-    - '"1501148593-1"'
+    - '"1501242466-1"'
     Content-Language:
     - en
     X-Frame-Options:
@@ -45,7 +45,7 @@ response:
     Cache-Control:
     - public, max-age=3600
     Last-Modified:
-    - Thu, 27 Jul 2017 09:43:13 GMT
+    - Fri, 28 Jul 2017 11:47:46 GMT
     Expires:
     - Sun, 19 Nov 1978 05:00:00 GMT
     Vary:
@@ -54,4 +54,4 @@ response:
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Thu, 27 Jul 2017 09:43:14 GMT
+recorded_at: Fri, 28 Jul 2017 11:47:46 GMT
