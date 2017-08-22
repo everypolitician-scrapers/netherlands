@@ -18,9 +18,9 @@ response:
     message: OK
   headers:
     Server:
-    - nginx/1.10.2
+    - nginx
     Date:
-    - Mon, 21 Aug 2017 01:39:31 GMT
+    - Tue, 22 Aug 2017 22:30:21 GMT
     Content-Type:
     - text/html; charset=utf-8
     Transfer-Encoding:
@@ -29,14 +29,10 @@ response:
     - keep-alive
     X-Drupal-Cache:
     - MISS
-    X-Content-Type-Options:
-    - nosniff
     Etag:
-    - '"1503279571-1"'
+    - '"1503441021-1"'
     Content-Language:
     - en
-    X-Frame-Options:
-    - SAMEORIGIN
     X-Generator:
     - Drupal 7 (http://drupal.org)
     Link:
@@ -45,13 +41,21 @@ response:
     Cache-Control:
     - public, max-age=3600
     Last-Modified:
-    - Mon, 21 Aug 2017 01:39:31 GMT
+    - Tue, 22 Aug 2017 22:30:21 GMT
     Expires:
     - Sun, 19 Nov 1978 05:00:00 GMT
     Vary:
     - Accept-Encoding
     - Cookie
+    X-Frame-Options:
+    - SAMEORIGIN
+    X-Content-Type-Options:
+    - nosniff
+    X-Xss-Protection:
+    - 1; mode=block
+    Strict-Transport-Security:
+    - max-age=31536000; includeSubdomains; preload
   body:
     encoding: UTF-8
   http_version: 
-recorded_at: Mon, 21 Aug 2017 01:39:31 GMT
+recorded_at: Tue, 22 Aug 2017 22:30:21 GMT
