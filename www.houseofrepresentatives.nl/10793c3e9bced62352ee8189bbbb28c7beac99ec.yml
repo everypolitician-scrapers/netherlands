@@ -20,7 +20,7 @@ response:
     Server:
     - nginx
     Date:
-    - Mon, 11 Sep 2017 21:01:22 GMT
+    - Tue, 12 Sep 2017 02:52:16 GMT
     Content-Type:
     - text/html; charset=utf-8
     Transfer-Encoding:
@@ -30,7 +30,7 @@ response:
     X-Drupal-Cache:
     - MISS
     Etag:
-    - '"1505163681-1"'
+    - '"1505184734-1"'
     Content-Language:
     - en
     X-Generator:
@@ -42,7 +42,7 @@ response:
     Cache-Control:
     - public, max-age=3600
     Last-Modified:
-    - Mon, 11 Sep 2017 21:01:21 GMT
+    - Tue, 12 Sep 2017 02:52:14 GMT
     Expires:
     - Sun, 19 Nov 1978 05:00:00 GMT
     Vary:
@@ -59,4 +59,4 @@ response:
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Mon, 11 Sep 2017 21:01:22 GMT
+recorded_at: Tue, 12 Sep 2017 02:52:16 GMT
