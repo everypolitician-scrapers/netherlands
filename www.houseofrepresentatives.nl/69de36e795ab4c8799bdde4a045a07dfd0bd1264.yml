@@ -20,17 +20,17 @@ response:
     Server:
     - nginx
     Date:
-    - Tue, 12 Sep 2017 03:11:46 GMT
+    - Wed, 13 Sep 2017 00:24:25 GMT
     Content-Type:
     - text/html; charset=utf-8
     Transfer-Encoding:
     - chunked
     Connection:
     - keep-alive
-    X-Drupal-Cache:
-    - MISS
-    Etag:
-    - '"1505185906-1"'
+    Expires:
+    - Sun, 19 Nov 1978 05:00:00 GMT
+    Cache-Control:
+    - no-cache, must-revalidate
     Content-Language:
     - en
     X-Generator:
@@ -38,15 +38,6 @@ response:
     Link:
     - <https://www.houseofrepresentatives.nl/members_of_parliament/members_of_parliament/helvert-mjf-van-cda>;
       rel="canonical",<https://www.houseofrepresentatives.nl/node/929>; rel="shortlink"
-    Cache-Control:
-    - public, max-age=3600
-    Last-Modified:
-    - Tue, 12 Sep 2017 03:11:46 GMT
-    Expires:
-    - Sun, 19 Nov 1978 05:00:00 GMT
-    Vary:
-    - Accept-Encoding
-    - Cookie
     X-Frame-Options:
     - SAMEORIGIN
     X-Content-Type-Options:
@@ -58,4 +49,4 @@ response:
   body:
     encoding: UTF-8
   http_version: 
-recorded_at: Tue, 12 Sep 2017 03:11:46 GMT
+recorded_at: Wed, 13 Sep 2017 00:24:25 GMT
