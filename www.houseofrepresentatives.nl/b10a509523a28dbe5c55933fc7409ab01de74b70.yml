@@ -1,0 +1,61 @@
+---
+request:
+  method: get
+  uri: https://www.houseofrepresentatives.nl/members_of_parliament/members_of_parliament/kooten-arissen-fm-van-pvdd
+  body:
+    encoding: US-ASCII
+    string: ''
+  headers:
+    Accept-Encoding:
+    - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+    Accept:
+    - '*/*'
+    User-Agent:
+    - Ruby
+response:
+  status:
+    code: 200
+    message: OK
+  headers:
+    Server:
+    - nginx
+    Date:
+    - Fri, 25 May 2018 11:52:47 GMT
+    Content-Type:
+    - text/html; charset=utf-8
+    Connection:
+    - keep-alive
+    X-Drupal-Cache:
+    - MISS
+    Etag:
+    - '"1527249166-1"'
+    Content-Language:
+    - en
+    X-Generator:
+    - Drupal 7 (http://drupal.org)
+    Link:
+    - <https://www.houseofrepresentatives.nl/members_of_parliament/members_of_parliament/kooten-arissen-fm-van-pvdd>;
+      rel="canonical",<https://www.houseofrepresentatives.nl/node/1291>; rel="shortlink"
+    Cache-Control:
+    - public, max-age=3600
+    Last-Modified:
+    - Fri, 25 May 2018 11:52:46 GMT
+    Expires:
+    - Sun, 19 Nov 1978 05:00:00 GMT
+    Vary:
+    - Accept-Encoding
+    - Cookie
+    X-Frame-Options:
+    - SAMEORIGIN
+    X-Content-Type-Options:
+    - nosniff
+    X-Xss-Protection:
+    - 1; mode=block
+    Strict-Transport-Security:
+    - max-age=31536000; includeSubdomains; preload
+    Content-Length:
+    - '4391'
+  body:
+    encoding: UTF-8
+  http_version: 
+recorded_at: Fri, 25 May 2018 11:52:47 GMT
