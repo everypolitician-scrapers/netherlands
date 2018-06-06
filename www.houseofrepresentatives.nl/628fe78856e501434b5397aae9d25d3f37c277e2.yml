@@ -17,33 +17,45 @@ response:
     code: 200
     message: OK
   headers:
-    Date:
-    - Thu, 23 Mar 2017 05:02:20 GMT
     Server:
-    - Apache
-    X-Content-Type-Options:
-    - nosniff
-    - nosniff
-    Expires:
-    - Sun, 19 Nov 1978 05:00:00 GMT
-    Cache-Control:
-    - no-cache, must-revalidate
+    - nginx
+    Date:
+    - Wed, 06 Jun 2018 03:23:18 GMT
+    Content-Type:
+    - text/html; charset=utf-8
+    Connection:
+    - keep-alive
+    X-Drupal-Cache:
+    - MISS
+    Etag:
+    - '"1528255397-1"'
     Content-Language:
     - en
-    X-Frame-Options:
-    - SAMEORIGIN
     X-Generator:
     - Drupal 7 (http://drupal.org)
     Link:
     - <https://www.houseofrepresentatives.nl/members_of_parliament/members_of_parliament/kerstens-jwm-pvda>;
       rel="canonical",<https://www.houseofrepresentatives.nl/node/964>; rel="shortlink"
+    Cache-Control:
+    - public, max-age=3600
+    Last-Modified:
+    - Wed, 06 Jun 2018 03:23:17 GMT
+    Expires:
+    - Sun, 19 Nov 1978 05:00:00 GMT
+    Vary:
+    - Accept-Encoding
+    - Cookie
+    X-Frame-Options:
+    - SAMEORIGIN
+    X-Content-Type-Options:
+    - nosniff
+    X-Xss-Protection:
+    - 1; mode=block
     Strict-Transport-Security:
-    - max-age=31536000
-    Transfer-Encoding:
-    - chunked
-    Content-Type:
-    - text/html; charset=utf-8
+    - max-age=31536000; includeSubdomains; preload
+    Content-Length:
+    - '4147'
   body:
     encoding: UTF-8
   http_version: 
-recorded_at: Thu, 23 Mar 2017 05:02:20 GMT
+recorded_at: Wed, 06 Jun 2018 03:23:18 GMT
