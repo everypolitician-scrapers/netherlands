@@ -20,7 +20,7 @@ response:
     Server:
     - nginx
     Date:
-    - Sat, 30 Jun 2018 13:33:35 GMT
+    - Sun, 01 Jul 2018 11:09:37 GMT
     Content-Type:
     - text/html; charset=utf-8
     Connection:
@@ -28,7 +28,7 @@ response:
     X-Drupal-Cache:
     - MISS
     Etag:
-    - '"1530365615-1"'
+    - '"1530443377-1"'
     Content-Language:
     - en
     X-Generator:
@@ -39,7 +39,7 @@ response:
     Cache-Control:
     - public, max-age=3600
     Last-Modified:
-    - Sat, 30 Jun 2018 13:33:35 GMT
+    - Sun, 01 Jul 2018 11:09:37 GMT
     Expires:
     - Sun, 19 Nov 1978 05:00:00 GMT
     Vary:
@@ -54,8 +54,8 @@ response:
     Strict-Transport-Security:
     - max-age=31536000; includeSubdomains; preload
     Content-Length:
-    - '4628'
+    - '4627'
   body:
     encoding: UTF-8
   http_version: 
-recorded_at: Sat, 30 Jun 2018 13:33:36 GMT
+recorded_at: Sun, 01 Jul 2018 11:09:37 GMT
