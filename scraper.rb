@@ -102,4 +102,5 @@ def get_extra_data(url)
   return details
 end
 
+ScraperWiki.sqliteexecute('DROP TABLE data') rescue nil
 scrape_list('https://www.houseofrepresentatives.nl/members_of_parliament/members_of_parliament', 'https://www.houseofrepresentatives.nl')
