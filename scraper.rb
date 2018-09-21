@@ -5,6 +5,9 @@ require 'scraperwiki'
 require 'nokogiri'
 require 'date'
 
+require 'open-uri/cached'
+OpenURI::Cache.cache_path = '.cache'
+
 def noko_for(url)
   Nokogiri::HTML(open(url).read)
 end
