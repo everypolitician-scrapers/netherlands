@@ -33,20 +33,10 @@ def expand_party(party)
 end
 
 def name_parts(tds)
-  sort_name = tds[0].css('a').text
-  name_parts = tds[0].css('a').text.split(',')
-  first_name = tds[1].css('span').text
-  last_name = name_parts.first
-  middle_names = name_parts.last.split('.').drop(1)
-  middle_name = middle_names.join(' ')
-  name = [first_name, middle_name, last_name].join(' ')
-  name = name.strip.gsub(/\s+/, " ")
-
-  return {
-    # name: name,
-    sort_name: sort_name,
-    family_name: last_name,
-    given_name: first_name,
+  {
+    sort_name: tds[0].css('a').text,
+    family_name: tds[0].css('a').text.split(',').first,
+    given_name: tds[1].css('span').text,
   }
 end
 
