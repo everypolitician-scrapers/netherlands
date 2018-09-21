@@ -32,7 +32,7 @@ def expand_party(party)
   return party
 end
 
-def get_name_parts(tds)
+def name_parts(tds)
   sort_name = tds[0].css('a').text
   name_parts = tds[0].css('a').text.split(',')
   first_name = tds[1].css('span').text
@@ -56,8 +56,6 @@ def scrape_list(url)
     tds = tr.css('td')
     next if tds.size == 1
 
-    name_parts = get_name_parts(tds)
-
     faction_id = tds[2].css('span').text
     faction = expand_party(faction_id)
 
@@ -67,7 +65,6 @@ def scrape_list(url)
     img = extra_div.css('img/@src').text
 
     extra_url = URI.join(url, extra_div.css('a/@href').text.to_s)
-    extra_data = get_extra_data(extra_url)
 
     data = {
       id: extra_url.to_s.split('/').last,
@@ -76,16 +73,15 @@ def scrape_list(url)
       gender: tds[5].css('span').text.downcase,
       img: img.to_s.empty? ? '' : URI.join(url, img.to_s).to_s,
       source: extra_url.to_s
-    }
+    }.merge(name_parts(tds)).merge(extra_data(extra_url))
 
-    data = data.merge(name_parts)
-    data = data.merge(extra_data)
     puts data.reject { |_, v| v.to_s.empty? }.sort_by { |k, _| k }.to_h if ENV['MORPH_DEBUG']
+
     ScraperWiki.save_sqlite([:id], data)
   end
 end
 
-def get_extra_data(url)
+def extra_data(url)
   noko = noko_for(url)
   contacts = noko.css('div.box-contact a')
   email = contacts.first.text rescue nil
