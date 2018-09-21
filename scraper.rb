@@ -32,14 +32,6 @@ def expand_party(party)
   return party
 end
 
-def name_parts(tds)
-  {
-    sort_name: tds[0].css('a').text,
-    family_name: tds[0].css('a').text.split(',').first,
-    given_name: tds[1].css('span').text,
-  }
-end
-
 def scrape_list(url)
   noko = noko_for(url)
   noko.css('table.member-list tbody tr').each_slice(2) do |tr, hidden|
@@ -59,12 +51,15 @@ def scrape_list(url)
     data = {
       id: extra_url.to_s.split('/').last,
       name: name,
+      sort_name: tds[0].css('a').text,
+      family_name: tds[0].css('a').text.split(',').first,
+      given_name: tds[1].css('span').text,
       faction_id: faction_id,
       faction: faction,
       gender: tds[5].css('span').text.downcase,
       img: img.to_s.empty? ? '' : URI.join(url, img.to_s).to_s,
       source: extra_url.to_s
-    }.merge(name_parts(tds)).merge(extra_data(extra_url))
+    }.merge(extra_data(extra_url))
 
     puts data.reject { |_, v| v.to_s.empty? }.sort_by { |k, _| k }.to_h if ENV['MORPH_DEBUG']
 
