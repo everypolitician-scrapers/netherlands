@@ -1,4 +1,70 @@
 GIT
+  remote: https://github.com/everypolitician/combine_popolo_memberships.git
+  revision: 5769841c55abc712ce59835a0fb944b1de12d982
+  specs:
+    combine_popolo_memberships (0.2.0)
+
+GIT
+  remote: https://github.com/everypolitician/scraped.git
+  revision: ecb23adeca95fba5356509d6445d528e212b3905
+  branch: scraper-class
+  specs:
+    scraped (0.6.2)
+      field_serializer (>= 0.3.0)
+      nokogiri
+      require_all
+
+GIT
+  remote: https://github.com/everypolitician/scraped_page_archive.git
+  revision: a998412b541769fa205406aa56aee1cbb17c99bb
+  specs:
+    scraped_page_archive (0.5.0)
+      git (~> 1.3.0)
+      vcr-archive (~> 0.3.0)
+
+GIT
+  remote: https://github.com/everypolitician/scraper_test.git
+  revision: 9b4326c1e04ea7c8caf368d99bb5ac3711726199
+  specs:
+    scraper_test (0.1.0)
+      minitest (~> 5.0)
+      pry
+      vcr (>= 3.0.3)
+      webmock (>= 2.0)
+
+GIT
+  remote: https://github.com/everypolitician/table_unspanner.git
+  revision: a70a98a104a75b470f4ea339fdd728366a40b4d8
+  specs:
+    table_unspanner (0.1.0)
+      nokogiri
+
+GIT
+  remote: https://github.com/everypolitician/wikidata-fetcher.git
+  revision: 6997062e395e2853bbc9993eabf89ba12fcc6cb1
+  specs:
+    wikidata-fetcher (0.21.0)
+      colorize
+      diskcached
+      json
+      mediawiki_api
+      nokogiri
+      require_all
+      rest-client
+      scraperwiki
+      wikidata-client (~> 0.0.7)
+      wikisnakker
+
+GIT
+  remote: https://github.com/everypolitician/wikidata_ids_decorator.git
+  revision: 17265d480df935631957a8188de38bdd42cbd29f
+  specs:
+    wikidata_ids_decorator (0.2.0)
+      pry
+      scraped
+      wikidata-fetcher
+
+GIT
   remote: https://github.com/openaustralia/scraperwiki-ruby.git
   revision: fc50176812505e463077d5c673d504a6a234aa78
   branch: morph_defaults
@@ -10,20 +76,131 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
+    ast (2.4.0)
+    coderay (1.1.2)
+    colorize (0.8.1)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
+    diskcached (1.1.3)
+    domain_name (0.5.20180417)
+      unf (>= 0.0.5, < 1.0.0)
+    excon (0.62.0)
+    execjs (2.7.0)
+    faraday (0.15.3)
+      multipart-post (>= 1.2, < 3)
+    faraday-cookie_jar (0.0.6)
+      faraday (>= 0.7.4)
+      http-cookie (~> 1.0.0)
+    faraday_middleware (0.12.2)
+      faraday (>= 0.7.4, < 1.0)
+    field_serializer (0.3.0)
+    git (1.3.0)
+    hashdiff (0.3.7)
+    hashie (3.6.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
     httpclient (2.8.3)
+    jaro_winkler (1.5.1)
+    json (2.1.0)
+    mediawiki_api (0.7.1)
+      faraday (~> 0.9, >= 0.9.0)
+      faraday-cookie_jar (~> 0.0, >= 0.0.6)
+      faraday_middleware (~> 0.10, >= 0.10.0)
+    method_source (0.9.0)
+    mime-types (3.2.2)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2018.0812)
     mini_portile2 (2.3.0)
+    minispec-metadata (2.0.0)
+      minitest
+    minitest (5.11.3)
+    minitest-around (0.4.1)
+      minitest (~> 5.0)
+    minitest-vcr (1.4.0)
+      minispec-metadata (~> 2.0)
+      minitest (>= 4.7.5)
+      vcr (>= 2.9)
+    multipart-post (2.0.0)
+    netrc (0.11.0)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
+    open-uri-cached (0.0.5)
+    parallel (1.12.1)
+    parser (2.5.1.2)
+      ast (~> 2.4.0)
+    powerpack (0.1.2)
+    pry (0.11.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    public_suffix (3.0.3)
+    rainbow (3.0.0)
+    rake (12.3.1)
+    require_all (2.0.0)
+    rest-client (2.0.2)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    rubocop (0.59.1)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.5, != 2.5.1.1)
+      powerpack (~> 0.1)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (~> 1.0, >= 1.0.1)
+    ruby-progressbar (1.10.0)
+    safe_yaml (1.0.4)
     sqlite3 (1.3.13)
     sqlite_magic (0.0.6)
       sqlite3
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.5)
+    unicode-display_width (1.4.0)
+    vcr (3.0.3)
+    vcr-archive (0.3.0)
+      vcr (~> 3.0.2)
+      webmock (~> 2.0.3)
+    webmock (2.0.3)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
+    wikidata-client (0.0.12)
+      excon (~> 0.40)
+      faraday (~> 0.9)
+      faraday_middleware (~> 0.9)
+      hashie (~> 3.3)
+    wikisnakker (0.9.1)
+      require_all
+      yajl-ruby
+    yajl-ruby (1.4.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  combine_popolo_memberships!
+  execjs
+  minitest
+  minitest-around
+  minitest-vcr
   nokogiri
+  open-uri-cached
+  pry
+  rake
+  rest-client
+  rubocop
+  scraped!
+  scraped_page_archive!
+  scraper_test!
   scraperwiki!
+  table_unspanner!
+  vcr
+  webmock
+  wikidata-fetcher!
+  wikidata_ids_decorator!
 
 RUBY VERSION
    ruby 2.4.1p111
