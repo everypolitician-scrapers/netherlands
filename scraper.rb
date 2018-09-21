@@ -71,7 +71,7 @@ def scrape_list(url, base_url)
       faction_id: faction_id,
       faction: faction,
       gender: tds[5].css('span').text.downcase,
-      img: URI.join(base_url, img.to_s).to_s,
+      img: img.to_s.empty? ? '' : URI.join(base_url, img.to_s).to_s,
       source: extra_url.to_s
     }
 
