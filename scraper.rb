@@ -50,7 +50,7 @@ def get_name_parts(tds)
   }
 end
 
-def scrape_list(url, base_url)
+def scrape_list(url)
   noko = noko_for(url)
   noko.css('table.member-list tbody tr').each do |tr|
     tds = tr.css('td')
@@ -66,7 +66,7 @@ def scrape_list(url, base_url)
 
     img = extra_div.css('img/@src').text
 
-    extra_url = URI.join(base_url, extra_div.css('a/@href').text.to_s)
+    extra_url = URI.join(url, extra_div.css('a/@href').text.to_s)
     extra_data = get_extra_data(extra_url)
 
     data = {
@@ -74,7 +74,7 @@ def scrape_list(url, base_url)
       faction_id: faction_id,
       faction: faction,
       gender: tds[5].css('span').text.downcase,
-      img: img.to_s.empty? ? '' : URI.join(base_url, img.to_s).to_s,
+      img: img.to_s.empty? ? '' : URI.join(url, img.to_s).to_s,
       source: extra_url.to_s
     }
 
@@ -106,4 +106,4 @@ def get_extra_data(url)
 end
 
 ScraperWiki.sqliteexecute('DROP TABLE data') rescue nil
-scrape_list('https://www.houseofrepresentatives.nl/members_of_parliament/members_of_parliament', 'https://www.houseofrepresentatives.nl')
+scrape_list('https://www.houseofrepresentatives.nl/members_of_parliament/members_of_parliament')
