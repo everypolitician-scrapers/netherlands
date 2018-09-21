@@ -43,7 +43,7 @@ def name_parts(tds)
   name = name.strip.gsub(/\s+/, " ")
 
   return {
-    name: name,
+    # name: name,
     sort_name: sort_name,
     family_name: last_name,
     given_name: first_name,
@@ -52,9 +52,9 @@ end
 
 def scrape_list(url)
   noko = noko_for(url)
-  noko.css('table.member-list tbody tr').each do |tr|
+  noko.css('table.member-list tbody tr').each_slice(2) do |tr, hidden|
     tds = tr.css('td')
-    next if tds.size == 1
+    name = hidden.css('h2').text
 
     faction_id = tds[2].css('span').text
     faction = expand_party(faction_id)
@@ -68,6 +68,7 @@ def scrape_list(url)
 
     data = {
       id: extra_url.to_s.split('/').last,
+      name: name,
       faction_id: faction_id,
       faction: faction,
       gender: tds[5].css('span').text.downcase,
