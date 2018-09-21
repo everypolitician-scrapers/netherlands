@@ -1,9 +1,8 @@
 # #!/bin/env ruby
 # encoding: utf-8
 
+require 'scraped'
 require 'scraperwiki'
-require 'nokogiri'
-require 'date'
 
 require 'open-uri/cached'
 OpenURI::Cache.cache_path = '.cache'
@@ -32,6 +31,11 @@ def expand_party(party)
   return party
 end
 
+def scraper(h)
+  url, klass = h.to_a.first
+  klass.new(response: Scraped::Request.new(url: url).response)
+end
+
 def scrape_list(url)
   noko = noko_for(url)
   noko.css('table.member-list tbody tr').each_slice(2) do |tr, hidden|
@@ -42,6 +46,7 @@ def scrape_list(url)
 
     img = hidden.css('img/@src').text
     extra_url = URI.join(url, hidden.css('a.goto-member/@href').text)
+    extra = scraper(extra_url => MemberPage).to_h
 
     data = {
       id: extra_url.to_s.split('/').last,
@@ -54,32 +59,37 @@ def scrape_list(url)
       gender: tds[5].css('span').text.downcase,
       img: img.to_s.empty? ? '' : URI.join(url, img.to_s).to_s,
       source: extra_url.to_s
-    }.merge(extra_data(extra_url))
+    }.merge(extra)
 
     puts data.reject { |_, v| v.to_s.empty? }.sort_by { |k, _| k }.to_h if ENV['MORPH_DEBUG']
-
     ScraperWiki.save_sqlite([:id], data)
   end
 end
 
-def extra_data(url)
-  noko = noko_for(url)
-  contacts = noko.css('div.box-contact a')
-  email = contacts.first.text rescue nil
-  website = contacts[1].css('@href').to_s if contacts[1]
-  details = noko.css('#passport dl')
-  dob = details.xpath('//dl/dt[contains(.,"Date of birth")]/following-sibling::dd[not(position() > 1)]/text()')
+class String
+  def to_date
+    Date.parse(self).to_s rescue nil
+  end
+end
 
-  dob = Date.parse(dob.to_s)
+class MemberPage < Scraped::HTML
+  field :email do
+    contacts.first.text rescue nil
+  end
 
-  details = {
-    email: email,
-    dob: dob.to_s
-  }
+  field :website do
+    contacts[1].css('@href').to_s if contacts[1]
+  end
 
-  details[:website] = website if website
+  field :dob do
+    noko.css('#passport dl').xpath('//dl/dt[contains(.,"Date of birth")]/following-sibling::dd[not(position() > 1)]/text()').to_s.to_date
+  end
 
-  return details
+  private
+
+  def contacts
+    noko.css('div.box-contact a')
+  end
 end
 
 ScraperWiki.sqliteexecute('DROP TABLE data') rescue nil
