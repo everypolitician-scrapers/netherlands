@@ -99,7 +99,7 @@ class MemberPage < Scraped::HTML
   end
 
   field :dob do
-    noko.css('#passport dl').xpath('//dl/dt[contains(.,"Date of birth")]/following-sibling::dd[not(position() > 1)]/text()').to_s.to_date
+    noko.xpath('//dl/dt[contains(.,"Date of birth")]/following-sibling::dd[not(position() > 1)]/text()').to_s.to_date
   end
 
   private
