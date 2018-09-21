@@ -40,12 +40,8 @@ def scrape_list(url)
     faction_id = tds[2].css('span').text
     faction = expand_party(faction_id)
 
-    data_rel = tds[0].css('a/@data-rel').text
-    extra_div = noko.css('div.' + data_rel )
-
-    img = extra_div.css('img/@src').text
-
-    extra_url = URI.join(url, extra_div.css('a/@href').text.to_s)
+    img = hidden.css('img/@src').text
+    extra_url = URI.join(url, hidden.css('a.goto-member/@href').text)
 
     data = {
       id: extra_url.to_s.split('/').last,
