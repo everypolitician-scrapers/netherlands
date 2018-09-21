@@ -36,7 +36,6 @@ def scrape_list(url)
   noko = noko_for(url)
   noko.css('table.member-list tbody tr').each_slice(2) do |tr, hidden|
     tds = tr.css('td')
-    name = hidden.css('h2').text
 
     faction_id = tds[2].css('span').text
     faction = expand_party(faction_id)
@@ -50,7 +49,7 @@ def scrape_list(url)
 
     data = {
       id: extra_url.to_s.split('/').last,
-      name: name,
+      name: hidden.css('h2').text,
       sort_name: tds[0].css('a').text,
       family_name: tds[0].css('a').text.split(',').first,
       given_name: tds[1].css('span').text,
